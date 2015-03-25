@@ -53,5 +53,6 @@ public class Main {
         String w5 = words2[1];
         String w6 = words2[2];
         System.out.println("String massive is: " + w1 + " " + w3 + " " + w2 + " "+ w4 + " " + w3 + " " + w6) ;
+        //changes
     }
 }
