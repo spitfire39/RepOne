@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4be344b5-3397-4b6e-9cd7-19f7a4543a0d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Door.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/NewClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/NewDoor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/OpenChromeBrowser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/operatorFor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/selenium_2_44.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Workspace.iml" afterPath="$PROJECT_DIR$/Workspace.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/operatorIF.java" afterPath="$PROJECT_DIR$/src/com/company/operatorIF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/operatorWhile.java" afterPath="$PROJECT_DIR$/src/com/company/operatorWhile.java" />
+    <list default="true" id="4be344b5-3397-4b6e-9cd7-19f7a4543a0d" name="Default" comment="Push all changes from from fourth lesson">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Door.java" afterPath="$PROJECT_DIR$/src/com/company/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/NewDoor.java" afterPath="$PROJECT_DIR$/src/com/company/NewDoor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Workspace.iws" />
@@ -69,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="operatorFor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="operatorFor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/operatorFor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5253054" vertical-offset="90" max-vertical-offset="663">
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="663">
               <caret line="23" column="64" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="64" />
               <folding />
             </state>
@@ -104,18 +94,18 @@
       <file leaf-file-name="Door.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Door.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewDoor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewDoor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/NewDoor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6230366" vertical-offset="0" max-vertical-offset="573">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -542,7 +532,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427311319187</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Push all changes from from fourth lesson">
+      <created>1427738681109</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1427738681109</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -592,7 +588,8 @@
     </option>
     <MESSAGE value="Push all changes from from second lesson" />
     <MESSAGE value="Push all changes from from third lesson" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push all changes from from third lesson" />
+    <MESSAGE value="Push all changes from from fourth lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push all changes from from fourth lesson" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -681,13 +678,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/OpenChromeBrowser.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_71/jre/lib/rt.jar!/java/io/PrintStream.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6613">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -699,26 +694,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/OpenChromeBrowser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/operatorFor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="663">
+          <caret line="23" column="64" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Door.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/NewDoor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/operatorFor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5253054" vertical-offset="90" max-vertical-offset="663">
-          <caret line="23" column="64" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.6230366" vertical-offset="0" max-vertical-offset="573">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding />
         </state>
       </provider>

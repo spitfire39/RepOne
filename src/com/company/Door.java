@@ -13,11 +13,20 @@ public class Door // --- create new class "Door"
         this.high = high;
         isOpened = true;
         doorColor = "red";
+
     }
 
-/*    public void close()
+    public void doorPrint()
     {
-        isOpened = false;
-        System.out.println("Closing door");
-    }*/
+        System.out.println("door1 high is " + high);
+        if (isOpened)
+        {
+            System.out.println("door1 is open");
+        }
+        else
+        {
+            System.out.println("door1 is closed");
+        }
+        System.out.println("door1 color is  " + doorColor);
+    }
 }
