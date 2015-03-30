@@ -26,7 +26,5 @@ public class operatorWhile {
             var1 = (var1 + 1);
         }
         System.out.println("Second while is over " + var1);
-
     }
-
 }

@@ -36,7 +36,5 @@ public class operatorIF {
         {
             System.out.println("Text is incorrect");
         }
-
-        //
     }
 }
