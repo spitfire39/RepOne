@@ -94,7 +94,7 @@ public class TaskOne
 
         ProDoor door = new ProDoor(2000, 900, true, false);
         String doorInfo = door.toString();
-        System.out.println("Door info: " + doorInfo);
+        System.out.println(doorInfo);
 
     }
 }

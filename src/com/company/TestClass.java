@@ -1,5 +1,4 @@
 package com.company;
-
 public class TestClass
 {
     public String c = "Hello World";
