@@ -92,9 +92,9 @@ public class TaskOne
         // Locked: no
         System.out.println("Task 8:");
 
-        ProDoor door = new ProDoor(2000, 900, true, false);
+        /*ProDoor door = new ProDoor(2000, 900, true, false);
         String doorInfo = door.toString();
         System.out.println(doorInfo);
-
+*/
     }
 }

@@ -21,6 +21,7 @@ public class ProDoor
 
 }*/
 
+/*
 package com.company;
 public class ProDoor
 {
@@ -39,13 +40,13 @@ public class ProDoor
     public ProDoor(int y, int x, boolean isOpen, boolean isLocked)
     {
 
-        door = x + y;
+        //door = x + y;
         this.high = y;
         this.length = x;
 
-        this.Opened = isOpen;
+        if (this.Opened = isOpen;
         this.Locked = isLocked;
+        //if ()
 
     }
-
-}
+}*/
