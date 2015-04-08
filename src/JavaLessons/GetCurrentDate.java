@@ -1,4 +1,4 @@
-package com.company;
+package JavaLessons;
 
 import sun.util.calendar.BaseCalendar;
 import java.util.Date;

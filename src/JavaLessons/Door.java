@@ -1,4 +1,4 @@
-package com.company;
+package JavaLessons;
 public class Door // --- create new class "Door"
 {
     // --- set parameters of "Door" class

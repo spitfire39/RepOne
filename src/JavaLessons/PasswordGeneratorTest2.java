@@ -1,11 +1,14 @@
-package com.company;
+package JavaLessons;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class PasswordGeneratorTest2 {
+
+        public static String password;
         public static void main(String[] args) throws InterruptedException
         {
                 System.setProperty("webdriver.chrome.driver", "C:/Automation/Workspace/chromedriver.exe");
@@ -25,8 +28,9 @@ public class PasswordGeneratorTest2 {
                 mySite.sendKeys(site);
                 WebElement myBtn = newDriver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td/input"));
                 myBtn.submit();
-                WebElement generatedPassword =newDriver.findElement(By.xpath("/html/body/form/table/tbody/tr[4]/td[2]/input"));
+                WebElement generatedPassword = newDriver.findElement(By.xpath("/html/body/form/table/tbody/tr[4]/td[2]/input"));
                 System.out.println(generatedPassword.getAttribute("value"));
         }
+
 
 }

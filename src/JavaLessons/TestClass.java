@@ -1,4 +1,4 @@
-package com.company;
+package JavaLessons;
 public class TestClass
 {
     public String c = "Hello World";

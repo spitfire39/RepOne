@@ -1,4 +1,4 @@
-package com.company;
+package JavaLessons;
 
 public class operatorIF {
     // --- type psvm and press Tab to create  public static void main(String[] args) {.....

@@ -1,4 +1,4 @@
-package com.company;
+package JavaLessons;
 
 public class operatorFor
 {

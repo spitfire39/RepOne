@@ -1,4 +1,4 @@
-package com.company;
+package JavaLessons;
 public class operatorWhile {
     public static void main(String[] args) {
         int var0 = 10;
