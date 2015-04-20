@@ -23,7 +23,8 @@ public class PasswordVerificationTest4
     }
     public void setField (String fieldName, String Pwd)
     {
-        WebElement myField = driver.findElement(By.xpath("//*[@name = 'master' and @type = 'password']"));
+        //WebElement myField = driver.findElement(By.xpath("//*[@name = 'master' and @type = 'password']"));
+        WebElement myField = driver.findElement(By.xpath("(//tbody//td)[text() ='"+fieldName+"']"));
         myField.sendKeys(Pwd);
     }
     public void getField()
