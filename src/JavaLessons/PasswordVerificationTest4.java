@@ -23,12 +23,18 @@ public class PasswordVerificationTest4
     }
     public void setField (String fieldName, String Pwd)
     {
-        WebElement myField = driver.findElement(By.xpath("//*[@name = 'master' and @type = 'password']"));
+//        WebElement myField = driver.findElement(By.xpath("//*[@name = 'master' and @type = 'password']"));
+        WebElement myField = driver.findElement(By.xpath("//tbody//td[text() = '"+fieldName+"']/..//input"));
+
+        //tbody//td[2]/input/../..//td[text() = '"+fieldName+"']
+        //tbody//td[2]/input/../..//td[text() = 'Your master password']
+        //tbody//td[text() = 'Your master password']/..//input
         myField.sendKeys(Pwd);
     }
-    public void getField()
+    public void getField(String fieldName)
     {
-        //some text
+        WebElement myField = driver.findElement(By.xpath("//tbody//td[text() = '"+fieldName+"']/..//input"));
+        value = myField.getText();
     }
     public void generate ()
     {
@@ -36,12 +42,20 @@ public class PasswordVerificationTest4
         WebElement myBtn = driver.findElement(By.xpath("//*[@type = 'submit' and @value = 'Generate']"));
         myBtn.submit();
     }
+    @Test
     public void passwordVerification() throws InterruptedException
     {
         setField("Your master password", "123456789");
-        setField("MySiteName");
+        setField("Site name", "123456789");
         generate();
-        String expectedResult = getField("jsTqcMgYxYn1L@1a");
+        getField("Generated password");
+        String expectedResult = "I9J2O1Ch3TtTQ@1a";
         Assert.assertEquals(expectedResult, value);
+    }
+    @After
+    public void driverQuit() throws InterruptedException
+    {
+        Thread.sleep(2000);
+        driver.quit();
     }
 }
