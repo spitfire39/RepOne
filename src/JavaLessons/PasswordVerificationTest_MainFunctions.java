@@ -19,10 +19,11 @@ public class PasswordVerificationTest_MainFunctions
         myField.sendKeys(text);
     }
 
-    public static void getField()
+    public static String getField()
     {
         WebElement myField = PasswordVerificationTest_Path.driver.findElement(By.xpath("//tbody//td[text() = '"+PasswordVerificationTest_Path.field+"']/..//input"));
-        PasswordVerificationTest_Path.value = myField.getText();
+//        PasswordVerificationTest_Path.value = myField.getText();
+        return myField.getAttribute("value");
     }
     public static void generate ()
     {
