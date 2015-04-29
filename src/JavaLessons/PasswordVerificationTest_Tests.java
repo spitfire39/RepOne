@@ -18,12 +18,16 @@ public class PasswordVerificationTest_Tests
     @Test
     public void passwordVerification() throws InterruptedException
     {
-        PasswordVerificationTest_Path.field = "Your master password";
+//        PasswordVerificationTest_Path.field = "Your master password";
         PasswordVerificationTest_MainFunctions.openBrowser();
-        PasswordVerificationTest_MainFunctions.setField(PasswordVerificationTest_Path.field = "Your master password");
-        PasswordVerificationTest_MainFunctions.setField();
+        PasswordVerificationTest_Path.field = "Your master password";
+        PasswordVerificationTest_MainFunctions.setField("pwd");
+        PasswordVerificationTest_Path.field = "Site name";
+        PasswordVerificationTest_MainFunctions.setField("site");
+        PasswordVerificationTest_MainFunctions.generate();
+        PasswordVerificationTest_Path.field = "Generated password";
         PasswordVerificationTest_MainFunctions.getField();
-        String expectedResult = "HFgKgXrqRuyRG@1a";
+        String expectedResult = "oiWpRwmIGLgtH@1a";
         Assert.assertEquals(expectedResult, PasswordVerificationTest_Path.value);
     }
     @After
