@@ -10,6 +10,7 @@ public class GT_MainFunctions
     {
         System.setProperty("webdriver.chrome.driver", "C:/Automation/Workspace/chromedriver.exe");
         GT_Path.driver = new ChromeDriver();
+        GT_Path.driver.manage().window().maximize();
         GT_Path.driver.get(GT_Path.sitePath);
     }
     public static void findElement(String path)
@@ -26,6 +27,6 @@ public class GT_MainFunctions
     }
     public static String getAttribute()
     {
-        return GT_Path.myField.getAttribute("value");
+        return GT_Path.myField.getText();
     }
 }

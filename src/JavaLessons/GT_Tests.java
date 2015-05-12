@@ -30,7 +30,10 @@ public class GT_Tests
         GT_MainFunctions.findElement(GT_Path.altLang);
         Thread.sleep(500);
         GT_MainFunctions.click();
-        Assert.assertEquals("привет мир", GT_MainFunctions.getAttribute());
+
+        GT_MainFunctions.findElement(GT_Path.translateValue);
+        Thread.sleep(500);
+        Assert.assertEquals("ahoj Svete", GT_MainFunctions.getAttribute());
     }
     @After
     public void driverQuit() throws InterruptedException
@@ -39,3 +42,9 @@ public class GT_Tests
         GT_Path.driver.quit();
     }
 }
+//--- run this test from command line from C:\Automation\Workspace\src\JavaLessons\ folder with *.java tests
+//--- C:/Automation/Workspace/selenium-2.44.0/* - path to selenium folder
+//--- C:/Automation/Workspace/selenium-2.44.0/libs/* - path to libs folder
+//--- C:/Automation/Workspace/out/production/Workspace - path to project folder
+//--- org.junit.runner.JUnitCore JavaLessons.GT_Tests - select test from src folder, which you are going to use
+//java -classpath "C:/Automation/Workspace/selenium-2.44.0/*;C:/Automation/Workspace/selenium-2.44.0/libs/*;C:/Automation/Workspace/out/production/Workspace" org.junit.runner.JUnitCore JavaLessons.GT_Tests
