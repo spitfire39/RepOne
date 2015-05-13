@@ -8,7 +8,9 @@ public class GT_MainFunctions
 {
     public static void openBrowser()
     {
+        // --- property for continious integration with drone.io http://docs.drone.io/browsers.html
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "C:/Automation/Workspace/chromedriver.exe");
         GT_Path.driver = new ChromeDriver();
         GT_Path.driver.manage().window().maximize();
         GT_Path.driver.get(GT_Path.sitePath);
