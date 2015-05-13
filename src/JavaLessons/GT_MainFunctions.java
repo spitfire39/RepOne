@@ -8,7 +8,7 @@ public class GT_MainFunctions
 {
     public static void openBrowser()
     {
-        System.setProperty("webdriver.chrome.driver", "C:/Automation/Workspace/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         GT_Path.driver = new ChromeDriver();
         GT_Path.driver.manage().window().maximize();
         GT_Path.driver.get(GT_Path.sitePath);
