@@ -18,35 +18,43 @@ public class UZ_Tests
         UZ_PageObject.populateFromField("kyiv");
 
         //--- verify text in From field
-        UZ_MainFunctions.findElement(UZ_Path.fromField);
-        Assert.assertEquals("Kyiv", UZ_MainFunctions.getAttribute());
+        Assert.assertEquals("Kyiv", UZ_PageObject.getFromField());
 
         //--- populate to field function
         UZ_PageObject.populateToField("odesa");
 
         //--- verify text in From field
-        UZ_MainFunctions.findElement(UZ_Path.toField);
-        Assert.assertEquals("Odesa", UZ_MainFunctions.getAttribute());
+        Assert.assertEquals("Odesa", UZ_PageObject.getToField());
 
         //--- populate Departure date
         UZ_PageObject.populateDepartureDate("05.30.2015");
 
         //--- verify text in From field
-        UZ_MainFunctions.findElement(UZ_Path.departureDate);
-        Assert.assertEquals("05.30.2015", UZ_MainFunctions.getAttribute());
+        Assert.assertEquals("05.30.2015", UZ_PageObject.getDepartureDateField());
 
         //--- populate Departure time
         UZ_PageObject.populateDepartureTime("12:00pm");
 
         //--- press Search btn
-        UZ_MainFunctions.findElement(UZ_Path.searchBtn);
-        UZ_MainFunctions.click();
-        Thread.sleep(1000);
+        UZ_PageObject.pressSearch();
+
         //--- verify that train is present
-        UZ_MainFunctions.findElement(UZ_Path.trainSearch);
-        Assert.assertEquals("763 Л", UZ_MainFunctions.getText());
+        Assert.assertEquals("763 Л", UZ_PageObject.getTrainSearchResult());
+
         //--- click on train
         UZ_MainFunctions.click();
+
+        //--- verify that train route is correct
+        Assert.assertEquals("Kyiv-Pasazhyrsky > Odesa-Holovna", UZ_PageObject.getRouteSearchResult());
+
+        //--- click on OK btn, close pop up window
+        UZ_PageObject.closeTrainRoute();
+
+        //--- Click on Choose btn on Available seats section
+        UZ_PageObject.clickChooseBtn();
+
+        //--- click on place in train
+
     }
     @After
     public void driverQuit() throws InterruptedException

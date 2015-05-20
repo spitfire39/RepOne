@@ -27,5 +27,13 @@ public class UZ_Path
     public static String departureDate = "//*[@id = 'date_dep']";
     //--- Departure time field
     public static String departureTime = "//*[@name = 'time_dep']";
+    //--- trains from search result
     public static String trainSearch = "//*[. = '763 Л']";
+    //--- description of train route
+    public static String trainRoute = "//dd[contains (text(), 'Kyiv-Pasazhyrsky > Odesa-Holovna')]";
+    //--- Close btn on the Train Route pop up
+    public static String closeTrainRoute = "//*[@title = 'close']";
+    //--- Choose btn on Available seats section
+    public static String chooseBtn = "//div//*[contains (text(), '125')]/..//*[contains (text(), 'Choose')]";
+
 }
