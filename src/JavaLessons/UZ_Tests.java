@@ -15,7 +15,7 @@ public class UZ_Tests
         Assert.assertEquals("Online reservation and purchase tickets - Ukrzaliznytsia", UZ_MainFunctions.getPageTitle());
 
         //--- populate From field function
-        UZ_PageObject.populateFromField("kyiv");
+        UZ_PageObject.populateFromField("Kyiv");
 
         //--- verify text in From field
         Assert.assertEquals("Kyiv", UZ_PageObject.getFromField());
@@ -60,6 +60,6 @@ public class UZ_Tests
     public void driverQuit() throws InterruptedException
     {
         Thread.sleep(2000);
-        UZ_Path.driver.quit();
+        UZ_MainFunctions.driver.quit();
     }
 }

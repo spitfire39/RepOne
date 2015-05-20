@@ -1,22 +1,38 @@
 package JavaLessons;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 public class UZ_PageObject
 {
     public static void populateFromField(String from) throws InterruptedException
     {
-        //--- find From field
-        UZ_MainFunctions.findElement(UZ_Path.fromField);
+//        //--- find From field
+//        UZ_MainFunctions.findElement(UZ_Path.fromField);
+//        //--- type destination in to From field
+//        UZ_MainFunctions.sendKeys(from);
+//        Thread.sleep(1000);
+//        //--- select value from autocomplete field
+//        UZ_MainFunctions.findElement(UZ_Path.fromFieldValue);
+//        UZ_MainFunctions.click();
+
+        // --- find From field
+        WebElement fromField = UZ_MainFunctions.driver.findElement(By.xpath("//*[@name = 'station_from']"));
         //--- type destination in to From field
-        UZ_MainFunctions.sendKeys(from);
+        fromField.sendKeys(from);
         Thread.sleep(1000);
         //--- select value from autocomplete field
-        UZ_MainFunctions.findElement(UZ_Path.fromFieldValue);
-        UZ_MainFunctions.click();
+        WebElement dropDownList = UZ_MainFunctions.driver.findElement(By.xpath("//*[. = '"+from+"']"));
+        dropDownList.click();
     }
     public static String getFromField() throws InterruptedException
     {
-        //--- verify text in From field
-        UZ_MainFunctions.findElement(UZ_Path.fromField);
+//        //--- verify text in From field
+//        UZ_MainFunctions.findElement(UZ_Path.fromField);
+//        return UZ_MainFunctions.getAttribute();
+
+        WebElement fromField = UZ_MainFunctions.driver.findElement(By.xpath("//*[@name = 'station_from']"));
         return UZ_MainFunctions.getAttribute();
     }
     public static void populateToField(String to) throws InterruptedException
@@ -44,11 +60,11 @@ public class UZ_PageObject
         UZ_MainFunctions.sendKeys(date);
     }
     public static String getDepartureDateField() throws InterruptedException
-    {
-        //--- verify text in Departure Date field
-        UZ_MainFunctions.findElement(UZ_Path.departureDate);
-        return UZ_MainFunctions.getAttribute();
-    }
+{
+    //--- verify text in Departure Date field
+    UZ_MainFunctions.findElement(UZ_Path.departureDate);
+    return UZ_MainFunctions.getAttribute();
+}
     public static void populateDepartureTime(String time) throws InterruptedException
     {
         //--- set departure time in to Departure time field

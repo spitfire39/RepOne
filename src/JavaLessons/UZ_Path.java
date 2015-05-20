@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 public class UZ_Path
 {
     //--- main elements
-    public static WebDriver driver;
-    public static WebElement element;
+//    public static WebDriver driver;
+//    public static WebElement element;
 
     //--- site path
     public static String sitePath = "http://booking.uz.gov.ua/en/";
