@@ -1,0 +1,23 @@
+package JavaLessons;
+
+import GMail.PageObject;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+
+public class InstaTest
+{
+    @Test
+    public void logInTest() throws InterruptedException
+    {
+        InstaObject.openBrowser("http://instabrand.com/");
+        InstaObject.signUp("First_Name1", "Last_Name1", "test39@gmail.com", "5554441", "Comany_One1", "WebSite1.com");
+        Assert.assertEquals("Thank you for contacting us. We will respond to you as soon as possible.", InstaObject.getNotification());
+    }
+    @After
+    public void driverQuit() throws InterruptedException
+    {
+        InstaObject.driver.quit();
+    }
+}
