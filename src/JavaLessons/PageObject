@@ -1,0 +1,122 @@
+package JavaLessons;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class PageObject
+{
+    public static WebDriver driver;
+    public static WebElement element;
+
+    //--- this method opens Firefox browser
+    public static void openBrowser(String sitePath)
+    {
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+        driver.get(sitePath);
+    }
+    //--- this method get page title
+    public static String getPageTitle()
+    {
+        return driver.getTitle();
+    }
+    //--- this method populates login and password
+    public static void loginIntoGMail(String login, String password) throws InterruptedException
+    {
+        //--- find Login field and populate it with corresponding value
+        WebElement loginField = driver.findElement(By.xpath("//div//*[@id = 'Email' and @type = 'email' and @name = 'Email']"));
+        loginField.sendKeys(login);
+        //--- find Continue btn and apply click
+        WebElement continueBtn = driver.findElement(By.xpath("//*[@id = 'next' and @type = 'submit' and @name = 'signIn']"));
+        continueBtn.click();
+        Thread.sleep(1000);
+        //--- find Password field and populate it with corresponding value
+        WebElement passwordField = driver.findElement(By.xpath("//div//*[@id = 'Passwd' and @type = 'password' and @name = 'Passwd']"));
+        passwordField.sendKeys(password);
+        //--- find Submit btn and apply click
+        WebElement submitBtn = driver.findElement(By.xpath("//*[@id = 'signIn' and @type = 'submit' and @name = 'signIn']"));
+        submitBtn.click();
+        //--- wait till GMail will be uploaded to check 'New email' btn presence
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebElement writeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains (text(), 'НАПИСАТЬ')]")));
+    }
+    //--- this method logout from profile
+    public static void logOutFromGMail()
+    {
+        //--- find profile btn and click on it
+        WebElement profile = driver.findElement(By.xpath("//*[@class = 'gb_ga gb_l gb_r gb_h']"));
+        profile.click();
+        //--- wait for Log Out btn and click on it
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebElement logOutBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id ='gb_71']")));
+        logOutBtn.click();
+        //--- wait for some element presence on login page
+        WebElement accountTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class = 'profile-name']")));
+    }
+    //--- this method switches between Google services
+    public static void servicesSwitch(String item)
+    {
+        //---expand Google services drop down list
+        WebElement serviceBtn = driver.findElement(By.xpath("//*[@class = 'gb_ga gb_2']"));
+        serviceBtn.click();
+        //--- click on some Google Service
+        WebElement serviceItem = driver.findElement(By.xpath("//*[contains(text(), '" + item + "')]"));
+        serviceItem.click();
+    }
+    public static String getFolderName;
+    //--- this method creates folder
+    public static void createFolder(String folderName)
+    {
+        //--- switch focus of WebDriver to the next found window
+        for (String winHandle : driver.getWindowHandles())
+        {
+            driver.switchTo().window(winHandle);
+        }
+        //--- wait for some element to appear on new browser window
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebElement field = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class = 'a-pa-ob-Ff a-Jf-Ma-m a-Ya-LYNcwc']")));
+        //--- open context menu and select Create New Folder
+        Actions action = new Actions(driver);
+        action.contextClick(field).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+        //--- populate name of the folder
+        WebElement editor = driver.findElement(By.xpath("//*[@class='kb-r-Mj f-Wh']"));
+        editor.sendKeys(folderName);
+        editor.sendKeys(Keys.ENTER);
+        //--- wait for folder to be created
+        WebElement folder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class = 'k-v-M' and @aria-label ='"+folderName+"']")));
+        getFolderName = folder.getText();
+    }
+    //--- this method removes folder
+    public static void removeFolder(String folderName)
+    {
+        //--- switch focus of WebDriver to the next found window
+        for (String winHandle : driver.getWindowHandles())
+        {
+            driver.switchTo().window(winHandle);
+        }
+        //--- select folder
+        WebElement folder = driver.findElement(By.xpath("//*[@class = 'k-v-M' and @aria-label ='"+folderName+"']"));
+        folder.click();
+        //--- click on Remove btn
+        WebElement recycle = driver.findElement(By.xpath("//*[@class='j-Ta-pb j-ia-e a-d-e' and @aria-label = 'Удалить']"));
+        recycle.click();
+    }
+    public static boolean folderInRecycle(String folderName)
+    {
+        //--- open Recycle in Google Drive
+        WebElement goToRecycle = driver.findElement(By.xpath("//*[@class = 'a-pa-P' and @data-tooltip='Корзина']"));
+        goToRecycle.click();
+        //--- find that corresponding folder is in recycle
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebElement folder = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class = 'k-v-M' and @aria-label ='"+folderName+"']")));
+        return folder.isDisplayed();
+    }
+}
