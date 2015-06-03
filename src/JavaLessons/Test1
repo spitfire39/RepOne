@@ -1,0 +1,59 @@
+package JavaLessons;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class Test1
+{
+
+    @Test
+    public void logInTest() throws InterruptedException
+    {
+        //--- open browser with corresponding page
+        PageObject.openBrowser("https://accounts.google.com/ServiceLogin?sacu=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=ru&service=mail#identifier");
+        //--- verify that we are on correct page by its title
+        Assert.assertEquals("Gmail", PageObject.getPageTitle());
+        //--- enter user login and user password
+        PageObject.loginIntoGMail("digicode.test39", "digicode");
+        //--- verify that we have login by our user
+        Assert.assertEquals("Входящие - digicode.test39@gmail.com - Gmail", PageObject.getPageTitle());
+    }
+    @Test
+    public void logOutTest () throws InterruptedException
+    {
+        //--- open browser with corresponding page, login in to email, verify that we have login by our user
+        PageObject.openBrowser("https://accounts.google.com/ServiceLogin?sacu=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=ru&service=mail#identifier");
+        PageObject.loginIntoGMail("digicode.test39", "digicode");
+        Assert.assertEquals("Входящие - digicode.test39@gmail.com - Gmail", PageObject.getPageTitle());
+        //--- logout from GMail
+        PageObject.logOutFromGMail();
+        //--- verify that we are on login page
+        Assert.assertEquals("Gmail", PageObject.getPageTitle());
+    }
+    @Test
+    public void folderCreateRemove() throws InterruptedException
+    {
+        //--- open browser with corresponding page, login in to email, verify that we have login by our user
+        PageObject.openBrowser("https://accounts.google.com/ServiceLogin?sacu=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=ru&service=mail#identifier");
+        PageObject.loginIntoGMail("digicode.test39", "digicode");
+        Assert.assertEquals("Входящие - digicode.test39@gmail.com - Gmail", PageObject.getPageTitle());
+        //--- open Google Disk
+        PageObject.servicesSwitch("Диск");
+        //--- create folder
+        PageObject.createFolder("Folder_1");
+        //--- verify that we are on correct page
+        Assert.assertEquals("Мой диск – Google Диск", PageObject.getPageTitle());
+        //--- verify that folder has been created
+        Assert.assertEquals("Folder_1", PageObject.getFolderName);
+        //--- remove folder
+        PageObject.removeFolder("Folder_1");
+        //--- verify that folder is in recycle
+        Assert.assertEquals(true, PageObject.folderInRecycle("Folder_1"));
+    }
+    @After
+    public void driverQuit() throws InterruptedException
+    {
+        PageObject.driver.quit();
+    }
+}
