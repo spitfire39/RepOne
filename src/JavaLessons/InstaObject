@@ -1,0 +1,60 @@
+package JavaLessons;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.invoke.empty.Empty;
+
+public class InstaObject
+{
+    public static WebDriver driver;
+    public static WebElement element;
+
+    //--- this method opens Firefox browser
+    public static void openBrowser(String sitePath)
+    {
+        System.setProperty("webdriver.chrome.driver", "D:/Temp/workspace/First_project/src/chromedriver.exe");
+        driver = new ChromeDriver();
+//        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+        driver.get(sitePath);
+    }
+    public static void signUp(String userName, String userLastName, String userEmail, String userPhone, String userCompany, String userSite)throws InterruptedException
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement singUpBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='btn btn-primary scrollPage' and .='Sign Up']")));
+        singUpBtn.click();
+
+        WebElement firstName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"YumProfile_firstname\"]")));
+        firstName.sendKeys(userName);
+
+        WebElement lastName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"YumProfile_lastname\"]")));
+        lastName.sendKeys(userLastName);
+
+        WebElement email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"YumProfile_email\"]")));
+        email.sendKeys(userEmail);
+
+        WebElement phone = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"YumProfile_work_phone\"]")));
+        phone.sendKeys(userPhone);
+
+        WebElement company = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"YumProfile_company\"]")));
+        company.sendKeys(userCompany);
+
+        WebElement webSite = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"YumProfile_website\"]")));
+        webSite.sendKeys(userSite);
+
+        WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"btn-submit-brand\"]")));
+        submitBtn.click();
+
+    }
+    public static String getNotification()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement notification = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), 'Thank you for contacting us. We will respond to you as soon as possible.')]")));
+        return notification.getText();
+    }
+}
