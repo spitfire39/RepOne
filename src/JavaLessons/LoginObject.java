@@ -15,7 +15,8 @@ public class LoginObject
 
     static void openBrowserChrome(String sitePath, String chromeDriverPath)
     {
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        // System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(sitePath);
