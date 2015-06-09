@@ -1,4 +1,4 @@
-package OpenForBeta;
+package JavaLessons;
 
 
 import com.gargoylesoftware.htmlunit.javascript.host.Selection;
