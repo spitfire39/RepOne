@@ -1,4 +1,4 @@
-package OpenForBeta;
+package JavaLessons;
 
 
 import org.junit.After;
