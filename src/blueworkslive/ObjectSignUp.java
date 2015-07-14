@@ -34,6 +34,7 @@ public class ObjectSignUp
         driver.manage().window().maximize();
         driver.get(sitePath);
     }
+    //--- press Try it now! btn
     void pressSignInForm() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@class='ibm_cci-sb-join leadspace-button ibm-tooltip']"));
@@ -42,6 +43,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate company name field
     void setCompanyName(String company) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@type='text' and @class='gwt-TextBox' and @name='Ecom_ShipTo_Postal_Company' and @vcard_name='vCard.Company']"));
@@ -51,6 +53,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate first name field
     void setFirstName(String name) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@type='text' and @class='gwt-TextBox' and @name='first_name' and @vcard_name='vCard.FirstName']"));
@@ -60,6 +63,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate last name field
     void setLastName(String lastName) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@type='text' and @class='bpAccountControlRight' and @name='last_name' and @vcard_name='vCard.LastName']"));
@@ -69,6 +73,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate email field
     void setEmail(String email) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@type='text' and @class='bpFieldDefault' and @name='email' and @vcard_name='vCard.Email']"));
@@ -78,6 +83,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate phone field
     void setPhone(String phone) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@type='text' and @class='bpAccountControlRight' and @name='phone' and @vcard_name='vCard.JobTitle']"));
@@ -87,6 +93,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate job title field
     void setJobTitle(String title) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@type='text' and @class='gwt-TextBox' and @name='jobTitle']"));
@@ -96,6 +103,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate country field
     void setCountry(String country) throws Exception {
         try{
             Select droplist = new Select(driver.findElement(By.xpath("//*[@class='gwt-ListBox signupFormListBoxWithTranslatedOptions' and @name='Ecom_ShipTo_Postal_CountryCode']")));
@@ -105,6 +113,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- populate Accept Terms checkbox
     void setAccept() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@type='checkbox' and @value='on' and @id='gwt-uid-2']"));
@@ -113,6 +122,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- press Submit btn
     void pressSubmitBtn() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//tr[38]//*[@type='button' and @class='squareTextButton']"));
@@ -122,18 +132,17 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- get company name for assertion
     String getCompanyName() throws Exception {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[3]//*[@class='bpConfirmationDataSection']")));
-//            WebElement element = driver.findElement(By.xpath("//tr[3]//*[@class='bpConfirmationDataSection']"));
-//            WebElement element = driver.findElement(By.xpath("//*[contains(text(), '"+companyName+"')]"));
-//            Thread.sleep(1000);
             return element.getText();
         } catch (NoSuchElementException e) {
             throw (e);
         }
     }
+    //--- press Create Account btn
     void pressCreateAccountBtn() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@type='button' and @class='squareTextButton' and contains(text(), 'Create Account')]"));
@@ -143,6 +152,7 @@ public class ObjectSignUp
             throw (e);
         }
     }
+    //--- get validation results of created account for assertion
     String getValidationResults() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@class='bpProcessingText' and contains(text(), 'Confirming Account Creation')]"));
