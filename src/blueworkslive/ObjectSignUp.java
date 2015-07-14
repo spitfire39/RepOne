@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ObjectSignUp
 {
     public static WebDriver driver;
-
+    //--- interface
     ObjectSignUp(String sitePath, String chromeDriverPath, String company, String name, String lastName, String email, String phone, String title, String country) throws Exception {
         openBrowserChrome(sitePath, chromeDriverPath);
         pressSignInForm();
