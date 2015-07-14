@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ObjectLogin {
     public static WebDriver driver;
-
+    //--- interface
     ObjectLogin(String sitePath, String chromeDriverPath, String email, String pwd) throws Exception {
         openBrowserChrome(sitePath, chromeDriverPath);
         pressLogin();
@@ -30,6 +30,7 @@ public class ObjectLogin {
         driver.manage().window().maximize();
         driver.get(sitePath);
     }
+    //--- press Login btn
     void pressLogin() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@id='ibm-primary-tabs' and @class='light ibm-no-mobile']//*[@class='topButton' and @href='/login']"));
@@ -38,6 +39,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- populate email field
     void setEmail(String email) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@name='txtLogin' and @type='text' and @id='txtLogin' and @class='textInput']"));
@@ -47,6 +49,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- populate pwd field
     void setPwd(String pwd) throws Exception {
         try{
             WebElement element = driver.findElement(By.xpath("//*[@name='txtPassword' and @type='password' and @id='txtPassword' and @class='textInput']"));
@@ -56,6 +59,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- press Submit btn
     void pressSubmitBtn() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@type='submit' and @id='loginButton' and @class='squareTextButton' and @value='login']"));
@@ -64,6 +68,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- close pop up window
     void closeGoPro() throws Exception {
         try {
 //            WebElement element = driver.findElement(By.xpath("//*[@class='bpDialogHeaderXButtonImage']"));
@@ -74,6 +79,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- open admin panel
     void openAdmin() throws Exception {
         try {
             WebElement element = driver.findElement(By.xpath("//*[@title='Admin']"));
@@ -82,6 +88,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- get account info for assertion
     String getAdminInfo(){
         try {
             WebElement element = driver.findElement(By.xpath("//*[@class='accountUsername' and contains(text(), 'automation.user.smtp@gmail.com')]"));
@@ -90,6 +97,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- press logout btn
     void pressLogOut(){
         try {
             WebElement element = driver.findElement(By.xpath("//*[@title = 'Log Out']"));
@@ -98,6 +106,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- switch to Work tab and get it load time
     void getWorkTab() throws InterruptedException {
         try {
             WebElement element = driver.findElement(By.xpath("//li[contains(text(), 'Work')]"));
@@ -117,6 +126,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- switch to Community tab and get it load time
     void getCommunityTab(){
         try {
             WebElement element = driver.findElement(By.xpath("//li[contains(text(), 'Community')]"));
@@ -136,6 +146,7 @@ public class ObjectLogin {
             throw (e);
         }
     }
+    //--- switch to Library tab and get it load time
     void getLibraryTab(){
         try {
             WebElement element = driver.findElement(By.xpath("//li[contains(text(), 'Library')]"));
